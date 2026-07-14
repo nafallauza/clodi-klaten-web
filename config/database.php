@@ -12,7 +12,9 @@ $password = getenv("MYSQLPASSWORD") ?: "";
 $database = getenv("MYSQLDATABASE") ?: "clodi_babyshop";
 $port = getenv("MYSQLPORT") ?: 3306;
 
-$conn = mysqli_connect($host, $username, $password, $database, $port);
+mysqli_report(MYSQLI_REPORT_OFF); // Disable exception mode for backwards compatibility
+
+$conn = @mysqli_connect($host, $username, $password, $database, $port);
 
 if (!$conn) {
     die("Koneksi database gagal : " . mysqli_connect_error());
