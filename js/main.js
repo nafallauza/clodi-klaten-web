@@ -101,7 +101,7 @@ function createProductCard(product) {
   const waNumber = "085353432343";
 
   const waMessage = encodeURIComponent(
-    `Halo Clodi Klaten, saya ingin bertanya mengenai produk "${product.name}". Apakah masih tersedia?`
+    `Halo Clodi Klaten! Saya tertarik dengan produk *${product.name}* seharga *Rp ${Number(product.price).toLocaleString("id-ID")}*.\n\nSaya ingin memesan:\nJumlah:\nNama:\nAlamat Pengiriman:\n\nMohon info ketersediaannya, terima kasih!`
   );
 
   return `
