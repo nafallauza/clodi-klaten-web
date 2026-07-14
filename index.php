@@ -328,7 +328,7 @@ $footer = mysqli_fetch_assoc($resultFooter);
         if (substr($waNumber, 0, 1) === '0') {
             $waNumber = '62' . substr($waNumber, 1);
         }
-        $waMessage = urlencode("Halo Clodi Klaten! Saya tertarik dengan produk {$product['name']} seharga Rp " . number_format($product['price'],0,",",".") . ".");
+        $waMessage = rawurlencode("Halo Clodi Klaten! Saya tertarik dengan produk {$product['name']} seharga Rp " . number_format($product['price'],0,",",".") . ".");
         $waLink = "https://wa.me/{$waNumber}?text={$waMessage}";
         ?>
         <a href="<?= $waLink; ?>" target="_blank" class="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1ebe57] text-white font-medium py-2.5 rounded-lg transition duration-300 mt-auto text-[15px]">
