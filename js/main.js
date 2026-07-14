@@ -105,44 +105,46 @@ function createProductCard(product) {
   );
 
   return `
-    <article class="product-card flex flex-col h-full bg-white rounded-2xl shadow-md overflow-hidden">
+    <article class="product-card bg-white rounded-xl border border-slate-200 overflow-hidden hover:border-babyBlue hover:shadow-lg transition-all duration-300 flex flex-col h-full group">
 
-      <div class="product-photo relative">
-        <img src="${product.image}" alt="${product.name}" loading="lazy" class="w-full h-64 object-cover">
-
-        ${product.sale ? '<span class="sale-label absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">Sale</span>' : ''}
+      <div class="relative w-full h-56 bg-slate-50 overflow-hidden">
+        <img src="${product.image}" alt="${product.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        ${product.sale ? '<span class="absolute top-2 right-2 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Sale</span>' : ''}
       </div>
 
-      <div class="product-info p-5 flex flex-col flex-grow">
-        <span class="text-sm text-sky-600 font-semibold mb-2 block">${product.category}</span>
-        <h3 class="product-name text-lg font-bold line-clamp-2">${product.name}</h3>
-
-        <div class="product-rating flex items-center mt-2 text-yellow-400">
-          ${makeStars(product.rating)}
+      <div class="p-4 flex flex-col flex-grow">
+        <div class="flex items-center justify-between mb-2">
+            <span class="text-[11px] uppercase tracking-wider text-slate-500 font-semibold bg-slate-100 px-2 py-0.5 rounded">
+                ${product.category}
+            </span>
+            <div class="flex items-center text-xs text-slate-600 font-medium">
+                <i class="bi bi-star-fill text-yellow-400 mr-1"></i> ${product.rating}
+            </div>
         </div>
 
-        <div class="product-price mt-4 flex items-end justify-between">
-          <div>
+        <h3 class="text-[15px] font-bold leading-tight text-slate-800 mt-1 line-clamp-2 hover:text-babyBlue transition-colors cursor-pointer">
+            ${product.name}
+        </h3>
+
+        <div class="mt-3 flex flex-col justify-end flex-grow">
             ${
               product.original_price
-                ? `<span class="price-original line-through text-gray-400 text-sm">Rp ${Number(
+                ? `<span class="line-through text-slate-400 text-[13px] font-medium">Rp ${Number(
                     product.original_price
                   ).toLocaleString("id-ID")}</span>`
                 : ""
             }
-            <span class="price-current text-sky-600 text-xl font-bold block">${formatPrice(
-              product.price
-            )}</span>
-          </div>
+            <div class="text-babyBlue text-lg font-extrabold tracking-tight">
+                ${formatPrice(product.price)}
+            </div>
         </div>
 
-        <!-- Tombol WhatsApp -->
         <a
           href="https://wa.me/${waNumber}?text=${waMessage}"
           target="_blank"
-          class="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1ebe57] text-white font-medium py-2.5 rounded-lg transition duration-300 mt-auto text-[15px]"
+          class="flex items-center justify-center gap-2 w-full bg-white border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white font-semibold py-2 rounded-lg transition-all duration-300 mt-4 text-[14px]"
         >
-          <i class="bi bi-whatsapp"></i>
+          <i class="bi bi-whatsapp text-lg"></i>
           Pesan via WA
         </a>
       </div>
