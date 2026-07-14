@@ -105,53 +105,47 @@ function createProductCard(product) {
   );
 
   return `
-    <article class="product-card">
+    <article class="product-card flex flex-col h-full bg-white rounded-2xl shadow-md overflow-hidden">
 
-      <div class="product-photo">
-        <img src="${product.image}" alt="${product.name}" loading="lazy">
+      <div class="product-photo relative">
+        <img src="${product.image}" alt="${product.name}" loading="lazy" class="w-full h-64 object-cover">
 
-        ${product.sale ? '<span class="sale-label">Sale</span>' : ''}
-
-        <div class="product-actions">
-          <button class="product-action" aria-label="Tambah ke favorit">
-            <i class="bi bi-heart"></i>
-          </button>
-
-          <button class="product-action" aria-label="Tambah ke keranjang">
-            <i class="bi bi-cart3"></i>
-          </button>
-        </div>
+        ${product.sale ? '<span class="sale-label absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded">Sale</span>' : ''}
       </div>
 
-      <!-- Tombol WhatsApp -->
-      <div class="px-4 mt-4">
+      <div class="product-info p-5 flex flex-col flex-grow">
+        <span class="text-sm text-sky-600 font-semibold mb-2 block">${product.category}</span>
+        <h3 class="product-name text-lg font-bold line-clamp-2">${product.name}</h3>
+
+        <div class="product-rating flex items-center mt-2 text-yellow-400">
+          ${makeStars(product.rating)}
+        </div>
+
+        <div class="product-price mt-4 flex items-end justify-between">
+          <div>
+            ${
+              product.original_price
+                ? `<span class="price-original line-through text-gray-400 text-sm">Rp ${Number(
+                    product.original_price
+                  ).toLocaleString("id-ID")}</span>`
+                : ""
+            }
+            <span class="price-current text-sky-600 text-xl font-bold block">${formatPrice(
+              product.price
+            )}</span>
+          </div>
+        </div>
+
+        <!-- Tombol WhatsApp -->
         <a
           href="https://wa.me/${waNumber}?text=${waMessage}"
           target="_blank"
-          class="flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-xl transition duration-300"
+          class="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1ebe57] text-white font-medium py-2.5 rounded-lg transition duration-300 mt-auto text-[15px]"
         >
           <i class="bi bi-whatsapp"></i>
-          Tanya via WhatsApp
+          Pesan via WA
         </a>
       </div>
-
-      <div class="product-info">
-        <h3 class="product-name">${product.name}</h3>
-
-        <div>
-          <span class="price">${formatPrice(product.price)}</span>
-
-${product.original_price
-  ? `<span class="old-price">${formatPrice(product.original_price)}</span>`
-  : ""}
-        </div>
-
-        <div class="star-row">
-          ${makeStars(product.rating)}
-        </div>
-        
-      </div>
-
     </article>
   `;
 }

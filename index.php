@@ -283,13 +283,13 @@ $footer = mysqli_fetch_assoc($resultFooter);
 
 <?php while($product=mysqli_fetch_assoc($resultProducts)): ?>
 
-<div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition">
+<div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition flex flex-col h-full">
 
     <img
         src="<?= htmlspecialchars($product['image']); ?>"
         class="w-full h-64 object-cover">
 
-    <div class="p-5">
+    <div class="p-5 flex flex-col flex-grow">
 
         <span class="text-sm text-sky-600 font-semibold">
 
@@ -297,7 +297,7 @@ $footer = mysqli_fetch_assoc($resultFooter);
 
         </span>
 
-        <h3 class="text-lg font-bold mt-2">
+        <h3 class="text-lg font-bold mt-2 line-clamp-2">
 
             <?= htmlspecialchars($product['name']); ?>
 
@@ -331,7 +331,7 @@ $footer = mysqli_fetch_assoc($resultFooter);
         $waMessage = urlencode("Halo Clodi Klaten! Saya tertarik dengan produk {$product['name']} seharga Rp " . number_format($product['price'],0,",",".") . ".");
         $waLink = "https://wa.me/{$waNumber}?text={$waMessage}";
         ?>
-        <a href="<?= $waLink; ?>" target="_blank" class="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1ebe57] text-white font-medium py-2.5 rounded-lg transition duration-300 mt-4 text-[15px]">
+        <a href="<?= $waLink; ?>" target="_blank" class="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1ebe57] text-white font-medium py-2.5 rounded-lg transition duration-300 mt-auto text-[15px]">
             <i class="bi bi-whatsapp"></i> Pesan via WA
         </a>
 
