@@ -40,26 +40,10 @@ if (isset($_POST['update'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Edit Testimoni</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="assets/css/admin.css">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-
-<body>
+?>
+<?php
+require_once "layout/header.php";
+?>
 
 <div class="max-w-3xl mx-auto mt-10">
 
@@ -147,7 +131,7 @@ Inactive
 <button
 type="submit"
 name="update"
-class="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-xl">
+class="btn-primary">
 
 Update Testimoni
 
@@ -166,7 +150,6 @@ Kembali
 </div>
 
 </div>
-
-</body>
-
-</html>
+<?php
+require_once "layout/footer.php";
+?>
