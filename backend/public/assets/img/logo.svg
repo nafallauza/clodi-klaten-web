@@ -1,0 +1,15 @@
+<svg width="142" height="82" viewBox="0 0 142 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text x="4" y="43" font-family="Poppins, Arial, sans-serif" font-size="36" font-weight="800" fill="#4BA7DF">cl</text>
+  <g transform="translate(39 4)">
+    <ellipse cx="15" cy="14" rx="5.5" ry="12.5" fill="#F7C7D6" transform="rotate(-17 15 14)"/>
+    <ellipse cx="31" cy="14" rx="5.5" ry="12.5" fill="#F7C7D6" transform="rotate(17 31 14)"/>
+    <circle cx="23" cy="30" r="19" fill="#fff" stroke="#F0D8D0" stroke-width="1.4"/>
+    <circle cx="16" cy="29" r="2.6" fill="#454D60"/>
+    <circle cx="30" cy="29" r="2.6" fill="#454D60"/>
+    <path d="M18 37c3.5 3.2 7 3.2 10.5 0" stroke="#454D60" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="23" cy="33" rx="3" ry="2.2" fill="#F1A7B6"/>
+  </g>
+  <text x="70" y="43" font-family="Poppins, Arial, sans-serif" font-size="36" font-weight="800" fill="#F18CA5">d</text>
+  <text x="96" y="43" font-family="Poppins, Arial, sans-serif" font-size="36" font-weight="800" fill="#92C84E">i</text>
+  <text x="58" y="65" font-family="Poppins, Arial, sans-serif" font-size="14" font-style="italic" font-weight="700" fill="#6A6D76">Klaten</text>
+</svg>
