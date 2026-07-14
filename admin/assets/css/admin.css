@@ -91,3 +91,25 @@ table td {
     transform: translateY(-2px) !important;
     box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3) !important;
 }
+.product-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+.badge {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-block;
+}
+.badge-sale {
+    background: #dcfce7;
+    color: #166534;
+}
+.badge-normal {
+    background: #fee2e2;
+    color: #991b1b;
+}
