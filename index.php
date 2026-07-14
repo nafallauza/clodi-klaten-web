@@ -309,25 +309,27 @@ $footer = mysqli_fetch_assoc($resultFooter);
 
         </div>
 
-        <div class="mt-4">
-
-            <?php if($product['original_price']) : ?>
-
-                <span class="line-through text-gray-400">
-
-                    Rp <?= number_format($product['original_price'],0,",","."); ?>
-
-                </span>
-
-            <?php endif; ?>
-
-            <div class="text-sky-600 text-xl font-bold">
-
-                Rp <?= number_format($product['price'],0,",","."); ?>
-
+        <div class="mt-4 flex items-end justify-between">
+            <div>
+                <?php if($product['original_price']) : ?>
+                    <span class="line-through text-gray-400 text-sm">
+                        Rp <?= number_format($product['original_price'],0,",","."); ?>
+                    </span>
+                <?php endif; ?>
+                <div class="text-sky-600 text-xl font-bold">
+                    Rp <?= number_format($product['price'],0,",","."); ?>
+                </div>
             </div>
-
         </div>
+
+        <?php 
+        $waNumber = "6285353432343"; // Use 62 for international format
+        $waMessage = urlencode("Halo Clodi Klaten! Saya tertarik dengan produk *{$product['name']}* seharga *Rp " . number_format($product['price'],0,",",".") . "*.\n\nSaya ingin memesan:\nJumlah:\nNama:\nAlamat Pengiriman:\n\nMohon info ketersediaannya, terima kasih!");
+        $waLink = "https://wa.me/{$waNumber}?text={$waMessage}";
+        ?>
+        <a href="<?= $waLink; ?>" target="_blank" class="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1ebe57] text-white font-semibold py-2.5 rounded-xl transition duration-300 mt-5">
+            <i class="bi bi-whatsapp"></i> Pesan via WA
+        </a>
 
     </div>
 
