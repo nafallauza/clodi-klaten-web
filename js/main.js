@@ -140,7 +140,7 @@ function createProductCard(product) {
         </div>
 
         <a
-          href="https://wa.me/${waNumber}?text=${waMessage}"
+          href="https://api.whatsapp.com/send?phone=${waNumber}&text=${waMessage}"
           target="_blank"
           class="flex items-center justify-center gap-2 w-full bg-white border-2 border-[#25D366] text-[#25D366] hover:bg-[#25D366] hover:text-white font-semibold py-2 rounded-lg transition-all duration-300 mt-4 text-[14px]"
         >
