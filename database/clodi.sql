@@ -1,8 +1,8 @@
-CREATE DATABASE IF NOT EXISTS clodi_babyshop
+
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_general_ci;
 
-USE clodi_babyshop;
+
 
 SET FOREIGN_KEY_CHECKS = 0;
 
