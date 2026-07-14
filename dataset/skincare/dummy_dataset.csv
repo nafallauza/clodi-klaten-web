@@ -1,0 +1,4 @@
+product_name,brand,category,skin_type,skin_concern,ingredients,active_ingredients,benefits,texture,fragrance,bpom_status,price,rating,total_reviews,source_dataset
+Avoskin Miraculous Refining Toner,Avoskin,Toner,"All, Oily, Acne Prone","Acne, Dullness","Water, Glycerin, AHA, BHA, PHA, Niacinamide...","AHA, BHA, PHA, Niacinamide","Exfoliating, Brightening, Acne care",Liquid,None,Registered,189000,4.8,1500,dummy
+Somethinc Niacinamide Moisture Sabi Beet Serum,Somethinc,Serum,All,"Dullness, Acne, Sebum","Water, Niacinamide, Sabi Beet Extract...","Niacinamide, Sabi Beet","Brightening, Sebum control",Viscous liquid,None,Registered,115000,4.7,2000,dummy
+Wardah Acnederm Pure Foaming Cleanser,Wardah,Cleanser,"Oily, Acne Prone","Acne, Oily","Water, Salicylic Acid, Glycerin...",Salicylic Acid,"Cleansing, Acne care",Foam,Mild,Registered,25000,4.5,800,dummy

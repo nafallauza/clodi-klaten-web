@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+python-multipart
+python-dotenv
+pydantic
+sqlalchemy
+langchain==0.2.14
+langchain-community==0.2.12
+langchain-google-genai==1.0.10
+langchain-core==0.2.37
+langchain-text-splitters==0.2.2
+chromadb
+numpy
+pillow
+opencv-python-headless
+requests
+pandas
