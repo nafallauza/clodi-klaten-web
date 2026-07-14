@@ -242,16 +242,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 }
 
-?><!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edit Produk</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-<body class="bg-slate-100">
+?>
+<?php
+require_once "layout/header.php";
+?>
 <div class="max-w-4xl mx-auto mt-10 bg-white rounded-xl shadow p-8">
 <h1 class="text-3xl font-bold mb-6">Edit Produk</h1>
 
@@ -270,21 +264,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <div class="grid grid-cols-2 gap-4">
 <div>
 <label>Nama Produk</label>
-<input class="w-full border p-2 rounded" type="text" name="name" value="<?= htmlspecialchars($name) ?>">
+<input class="w-full" type="text" name="name" value="<?= htmlspecialchars($name) ?>">
 </div>
 
 <div>
 <label>Kategori</label>
-<input class="w-full border p-2 rounded" type="text" name="category" value="<?= htmlspecialchars($category) ?>">
+<input class="w-full" type="text" name="category" value="<?= htmlspecialchars($category) ?>">
 </div>
 
 <div>
 <label>Harga</label>
-<input class="w-full border p-2 rounded" type="number" name="price" value="<?= htmlspecialchars($price) ?>">
+<input class="w-full" type="number" name="price" value="<?= htmlspecialchars($price) ?>">
 
 <div>
 <label>Harga Coret</label>
-<input class="w-full border p-2 rounded" type="number" name="original_price" value="<?= htmlspecialchars($originalPrice) ?>">
+<input class="w-full" type="number" name="original_price" value="<?= htmlspecialchars($originalPrice) ?>">
 </div>
 
 <div>
@@ -292,7 +286,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <select
     name="status"
-    class="w-full border p-2 rounded">
+    class="w-full">
 
     <option
         value="active"
@@ -316,7 +310,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <label>Deskripsi</label>
 
 <textarea
-class="w-full border p-2 rounded"
+class="w-full"
 rows="5"
 name="description"><?= htmlspecialchars($description) ?></textarea>
 
@@ -328,10 +322,11 @@ name="description"><?= htmlspecialchars($description) ?></textarea>
 </div>
 
 <div class="mt-6 flex gap-3">
-<button class="bg-sky-600 text-white px-5 py-2 rounded" type="submit">Simpan Perubahan</button>
+<button class="btn-primary" type="submit"><i class="fas fa-save"></i> Simpan Perubahan</button>
 <a class="bg-slate-300 px-5 py-2 rounded" href="products.php">Batal</a>
 </div>
 </form>
 </div>
-</body>
-</html>
+<?php
+require_once "layout/footer.php";
+?>

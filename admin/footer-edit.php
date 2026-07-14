@@ -90,36 +90,9 @@ if (isset($_POST['update'])) {
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="id">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Edit Footer | Clodi Klaten Babyshop</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-rel="stylesheet">
-
-<link rel="stylesheet" href="assets/css/admin.css">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-
-<body>
+<?php
+require_once "layout/header.php";
+?>
 
 <div class="max-w-4xl mx-auto mt-10">
 
@@ -151,6 +124,7 @@ Alamat
 
 <textarea
 name="address"
+class="w-full"
 rows="4"
 required><?= htmlspecialchars($footer['address']); ?></textarea>
 
@@ -167,6 +141,7 @@ WhatsApp
 <input
 type="text"
 name="phone"
+class="w-full"
 value="<?= htmlspecialchars($footer['phone']); ?>"
 required>
 
@@ -183,6 +158,7 @@ Email
 <input
 type="email"
 name="email"
+class="w-full"
 value="<?= htmlspecialchars($footer['email']); ?>"
 required>
 
@@ -199,6 +175,7 @@ Instagram
 <input
 type="url"
 name="instagram"
+class="w-full"
 value="<?= htmlspecialchars($footer['instagram']); ?>">
 
 </div>
@@ -214,6 +191,7 @@ Facebook
 <input
 type="url"
 name="facebook"
+class="w-full"
 value="<?= htmlspecialchars($footer['facebook']); ?>">
 
 </div>
@@ -229,6 +207,7 @@ YouTube
 <input
 type="url"
 name="youtube"
+class="w-full"
 value="<?= htmlspecialchars($footer['youtube']); ?>">
 
 </div>
@@ -244,6 +223,7 @@ TikTok
 <input
 type="url"
 name="tiktok"
+class="w-full"
 value="<?= htmlspecialchars($footer['tiktok']); ?>">
 
 </div>
@@ -259,6 +239,7 @@ Copyright
 <input
 type="text"
 name="copyright"
+class="w-full"
 value="<?= htmlspecialchars($footer['copyright']); ?>">
 
 </div>
@@ -270,7 +251,7 @@ value="<?= htmlspecialchars($footer['copyright']); ?>">
 <button
 type="submit"
 name="update"
-class="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-xl">
+class="btn-primary">
 
 <i class="fas fa-save"></i> Simpan Perubahan
 
@@ -278,7 +259,7 @@ class="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3 rounded-xl">
 
 <a
 href="footer.php"
-class="bg-slate-300 hover:bg-slate-400 px-6 py-3 rounded-xl">
+class="btn-secondary">
 
 ← Kembali
 
@@ -291,7 +272,6 @@ class="bg-slate-300 hover:bg-slate-400 px-6 py-3 rounded-xl">
 </div>
 
 </div>
-
-</body>
-
-</html>
+<?php
+require_once "layout/footer.php";
+?>

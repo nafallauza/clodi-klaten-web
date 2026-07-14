@@ -168,7 +168,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         ) {
 
             $imageDatabase =
-                "admin/uploads/products/" .
+                "uploads/products/" .
                 $newFilename;
 
             $originalPriceValue =
@@ -250,32 +250,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 
 ?>
-
-<!DOCTYPE html>
-
-<html lang="id">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Tambah Produk</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-rel="stylesheet">
-
-<link rel="stylesheet" href="assets/css/admin.css">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-
-<body>
+<?php
+require_once "layout/header.php";
+?>
 
 <div class="card">
 
@@ -313,7 +290,7 @@ enctype="multipart/form-data">
 
 <label>Nama Produk</label>
 
-<input
+<input class="w-full"
 type="text"
 name="name"
 value="<?= htmlspecialchars($name) ?>">
@@ -324,7 +301,7 @@ value="<?= htmlspecialchars($name) ?>">
 
 <label>Kategori</label>
 
-<input
+<input class="w-full"
 type="text"
 name="category"
 value="<?= htmlspecialchars($category) ?>">
@@ -335,7 +312,7 @@ value="<?= htmlspecialchars($category) ?>">
 
 <label>Harga</label>
 
-<input
+<input class="w-full"
 type="number"
 name="price"
 value="<?= htmlspecialchars($price) ?>">
@@ -346,7 +323,7 @@ value="<?= htmlspecialchars($price) ?>">
 
 <label>Harga Coret</label>
 
-<input
+<input class="w-full"
 type="number"
 name="original_price"
 value="<?= htmlspecialchars($original_price) ?>">
@@ -450,10 +427,8 @@ Produk Sedang Sale
 
 <div class="mt-8">
 
-<button type="submit">
-
-Simpan Produk
-
+<button class="btn-primary" type="submit">
+<i class="fas fa-save"></i> Simpan Produk
 </button>
 
 <a
@@ -470,6 +445,6 @@ Batal
 
 </div>
 
-</body>
-
-</html>
+<?php
+require_once "layout/footer.php";
+?>
