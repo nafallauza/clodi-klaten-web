@@ -98,10 +98,10 @@ function makeStars(rating) {
 }
 
 function createProductCard(product) {
-  const waNumber = "085353432343";
+  const waNumber = window.GLOBAL_WA_NUMBER || "6285353432343";
 
   const waMessage = encodeURIComponent(
-    `Halo Clodi Klaten! Saya tertarik dengan produk *${product.name}* seharga *Rp ${Number(product.price).toLocaleString("id-ID")}*.\n\nSaya ingin memesan:\nJumlah:\nNama:\nAlamat Pengiriman:\n\nMohon info ketersediaannya, terima kasih!`
+    `Halo Clodi Klaten! Saya tertarik dengan produk ${product.name} seharga Rp ${Number(product.price).toLocaleString("id-ID")}.`
   );
 
   return `

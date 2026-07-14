@@ -323,11 +323,15 @@ $footer = mysqli_fetch_assoc($resultFooter);
         </div>
 
         <?php 
-        $waNumber = "6285353432343"; // Use 62 for international format
-        $waMessage = urlencode("Halo Clodi Klaten! Saya tertarik dengan produk *{$product['name']}* seharga *Rp " . number_format($product['price'],0,",",".") . "*.\n\nSaya ingin memesan:\nJumlah:\nNama:\nAlamat Pengiriman:\n\nMohon info ketersediaannya, terima kasih!");
+        $rawPhone = isset($footer['phone']) ? $footer['phone'] : "085353432343";
+        $waNumber = preg_replace('/[^0-9]/', '', $rawPhone);
+        if (substr($waNumber, 0, 1) === '0') {
+            $waNumber = '62' . substr($waNumber, 1);
+        }
+        $waMessage = urlencode("Halo Clodi Klaten! Saya tertarik dengan produk {$product['name']} seharga Rp " . number_format($product['price'],0,",",".") . ".");
         $waLink = "https://wa.me/{$waNumber}?text={$waMessage}";
         ?>
-        <a href="<?= $waLink; ?>" target="_blank" class="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1ebe57] text-white font-semibold py-2.5 rounded-xl transition duration-300 mt-5">
+        <a href="<?= $waLink; ?>" target="_blank" class="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1ebe57] text-white font-medium py-2.5 rounded-lg transition duration-300 mt-4 text-[15px]">
             <i class="bi bi-whatsapp"></i> Pesan via WA
         </a>
 
@@ -690,6 +694,16 @@ Customer Support
 
 </footer>
 
+  <script>
+    <?php 
+      $rawPhoneJs = isset($footer['phone']) ? $footer['phone'] : "085353432343";
+      $waNumberJs = preg_replace('/[^0-9]/', '', $rawPhoneJs);
+      if (substr($waNumberJs, 0, 1) === '0') {
+          $waNumberJs = '62' . substr($waNumberJs, 1);
+      }
+    ?>
+    window.GLOBAL_WA_NUMBER = "<?= $waNumberJs ?>";
+  </script>
   <script src="js/main.js"></script>
 </body>
 </html>
