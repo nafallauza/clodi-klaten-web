@@ -7,7 +7,8 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/frontend-data')
+    const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000';
+    fetch(`${API_URL}/api/frontend-data`)
       .then(res => {
         if (!res.ok) throw new Error('Failed to fetch data');
         return res.json();
@@ -74,7 +75,7 @@ function App() {
               return (
                 <div key={product.id} className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg hover:-translate-y-1 transition duration-300">
                   <div className="relative pt-[100%] overflow-hidden bg-slate-100">
-                    <img src={`http://localhost:8000/${product.image}`} alt={product.name} className="absolute inset-0 w-full h-full object-cover" />
+                    <img src={`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/${product.image}`} alt={product.name} className="absolute inset-0 w-full h-full object-cover" />
                   </div>
                   <div className="p-4">
                     <p className="text-xs font-semibold text-slate-500 mb-1">{product.category}</p>
@@ -111,7 +112,7 @@ function App() {
                 <p className="text-slate-600 mb-6 italic leading-relaxed">"{testi.comment}"</p>
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-slate-200">
-                    <img src={`http://localhost:8000/${testi.photo}`} alt={testi.customer_name} className="w-full h-full object-cover" />
+                    <img src={`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/${testi.photo}`} alt={testi.customer_name} className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h4 className="font-bold text-slate-800">{testi.customer_name}</h4>

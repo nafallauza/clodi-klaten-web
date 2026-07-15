@@ -6,7 +6,7 @@ const Navbar = ({ navbarData }) => {
       <div className="max-w-7xl mx-auto px-6 h-[92px] flex items-center justify-between">
         <a href="#" className="shrink-0">
           <img
-            src={navbarData?.logo ? `http://localhost:8000/${navbarData.logo}` : 'http://localhost:8000/assets/img/logo.png'}
+            src={navbarData?.logo ? `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/${navbarData.logo}` : `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'}/assets/img/logo.png`}
             alt={navbarData?.store_name || "Clodi Klaten"}
             className="w-[104px]"
           />
